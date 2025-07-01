@@ -1,17 +1,20 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Form from "./components/Form";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
     <>
-      <h1 className="text-2xl font-bold">Hello World</h1>
-      <p className="text-red-200">Hola</p>
+      <main className="bg-hero w-full h-full flex justify-evenly gap-35 p-10">
+        <Form />
+        <div className="flex justify-center items-center text-center">
+          <p className="text-white text-[64px] leading-25">
+            Busca rutas para
+            <span className="block text-[5vw] font-bold">
+              DESCUBRIR EL PERÚ
+            </span>
+            de forma accesible
+          </p>
+        </div>
+      </main>
     </>
   );
 }
-
-export default App;
