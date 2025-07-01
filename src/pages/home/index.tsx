@@ -1,7 +1,5 @@
-import React from "react";
-import Header from "../../components/Header";
 import Form from "../../components/Form";
-export const Home = () => {
+const Home = () => {
   return (
     <main className="bg-hero w-full h-full flex justify-evenly gap-35 p-10">
       <Form />
@@ -15,3 +13,4 @@ export const Home = () => {
     </main>
   );
 };
+export default Home;
