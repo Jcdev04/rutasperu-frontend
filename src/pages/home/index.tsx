@@ -1,20 +1,17 @@
 import React from "react";
 import Header from "../../components/Header";
-
-const Home = () => {
+import Form from "../../components/Form";
+export const Home = () => {
   return (
-    <div
-      className="w-full h-screen"
-      style={{
-        backgroundImage: `url('/img/background-home.png')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <Header />
-      <div className="w-full flex gap-10 items-center justify-center"></div>
-    </div>
+    <main className="bg-hero w-full h-full flex justify-evenly gap-35 p-10">
+      <Form />
+      <div className="flex justify-center items-center text-center">
+        <p className="text-white text-[64px] leading-25">
+          Busca rutas para
+          <span className="block text-[5vw] font-bold">DESCUBRIR EL PERÚ</span>
+          de forma accesible
+        </p>
+      </div>
+    </main>
   );
 };
-
-export default Home;
