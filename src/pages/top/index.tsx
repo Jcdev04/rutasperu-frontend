@@ -1,4 +1,4 @@
-import React from "react";
+import Header from "../../components/Header";
 
 const Top = () => {
   return (
@@ -10,6 +10,7 @@ const Top = () => {
         backgroundPosition: "center",
       }}
     >
+      <Header/>
       <h1 className="text-white text-4xl font-bold">Top Page</h1>
     </div>
   );
