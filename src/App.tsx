@@ -1,16 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-
+import Home from "./pages/home";
+import Top from "./pages/top";
+import Details from "./pages/details";
+import { Navigate, Route, Routes } from "react-router-dom";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1 className="text-2xl font-bold">Hello World</h1>
-      <p className="text-red-200">Hola</p>
-    </>
+    <Routes>
+      {/* 1. Home */}
+      <Route path="/" element={<Home />} />
+
+      {/* 2. Top */}
+      <Route path="/top" element={<Top />} />
+
+      {/* 3. Details */}
+      <Route path="/details" element={<Details />} />
+
+      {/* Redirección o 404 */}
+      <Route path="*" element={<Navigate replace to="/" />} />
+    </Routes>
   );
 }
 
