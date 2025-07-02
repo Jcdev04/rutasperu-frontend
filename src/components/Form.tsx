@@ -8,7 +8,7 @@ export default function Form() {
             <span className="block text-[#16A34A] font-bold">
               LA RUTA IDEAL
             </span>
-             para tu viaje
+            para tu viaje
           </p>
         </div>
         <div className="flex flex-col gap-5">
@@ -23,8 +23,8 @@ export default function Form() {
           <label>
             Seleccionar Prioridad:
             <select>
-              <option value="vuelo">Vuelo</option>
-              <option value="bus">Bus</option>
+              <option value="time">Tiempo óptimo</option>
+              <option value="price">Precio más económico</option>
             </select>
           </label>
         </div>
