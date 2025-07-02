@@ -39,4 +39,11 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+  .bg-section {
+    background-image: url("/src/assets/imgs/background-section.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
