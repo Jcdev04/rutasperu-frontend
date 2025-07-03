@@ -1,10 +1,13 @@
 import Header from "./Header";
+import Medal1 from "../assets/imgs/medal1.png";
+import Medal2 from "../assets/imgs/medal2.png";
+import Medal3 from "../assets/imgs/medal3.png";
 
 export default function Results() {
   return (
     <section className="w-full h-full flex flex-col bg-section">
       <Header />
-      <div className="flex-1 bg-amber-400 flex justify-center items-center">
+      <div className="flex-1 flex justify-center items-center">
         <div className="text-center text-white">
           <h1 className="text-[64px] font-bold">TOP 3 rutas</h1>
           <p className="text-[32px]">Mas baratas</p>
@@ -12,21 +15,41 @@ export default function Results() {
         </div>
       </div>
 
-      <div className="flex-1/3 bg-amber-900">
+      <div className="flex-1/3">
         <div className="grid grid-cols-3 h-full">
-            <div className="py-15 flex justify-center items-end bg-red-400">
-                <div className="flex w-full max-w-md bg-green-400">
-                    <div className="flex-1">
-                        IMAGEN
-                    </div>
-                    <div className="flex-1 justify-center text-center">
-                        <h1 className="">S/. X</h1>
-                        <p>Segunda opcion</p>
-                    </div>
-                </div>
+          <div className="py-15 px-5 flex justify-center items-end">
+            <div className="flex w-full max-w-md bg-[#dcfce7] h-[176px] rounded-[15px]">
+              <div className="flex-1 flex h-full items-center justify-center">
+                <img src={Medal2} alt="medal-2" />
+              </div>
+              <div className="flex-1 flex flex-col h-full items-center justify-center text-center">
+                <h1 className="text-[#16A34A] text-[48px] font-bold">S/. X</h1>
+                <p className="text-[20px]">Segunda opcion</p>
+              </div>
             </div>
-            <div className="py-15 flex justify-center items-end bg-red-500">GANADOR</div>
-            <div className="py-15 flex justify-center items-end bg-red-600">TERCERO</div>
+          </div>
+          <div className="py-15 px-5 flex justify-center items-end">
+            <div className="flex w-full  bg-[#16A34A] h-[355px] rounded-[15px]">
+              <div className="flex-1 flex h-full items-center justify-center">
+                <img src={Medal1} alt="medal-2" />
+              </div>
+              <div className="text-white flex-1 flex flex-col h-full items-center justify-center text-center">
+                <h1 className="text-[96px] font-bold">S/. X</h1>
+                <p className="text-[32px]">Primera opcion</p>
+              </div>
+            </div>
+          </div>
+          <div className="py-15 px-5 flex justify-center items-end">
+            <div className="flex w-full max-w-md bg-[#dcfce7] h-[176px] rounded-[15px]">
+              <div className="flex-1 flex h-full items-center justify-center">
+                <img src={Medal3} alt="medal-2" />
+              </div>
+              <div className="flex-1 flex flex-col h-full items-center justify-center text-center">
+                <h1 className="text-[#16A34A] text-[48px] font-bold">S/. X</h1>
+                <p className="text-[20px]">Tercera opcion</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
