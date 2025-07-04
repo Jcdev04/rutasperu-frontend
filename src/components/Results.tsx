@@ -2,8 +2,17 @@ import Header from "./Header";
 import Medal1 from "../assets/imgs/medal1.png";
 import Medal2 from "../assets/imgs/medal2.png";
 import Medal3 from "../assets/imgs/medal3.png";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Results() {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      defaults: { delay: 0.1, duration: 1, autoAlpha: 1 },
+    });
+    tl.to(".card3", {}).to(".card2", {}).to(".card1", {});
+  });
+
   return (
     <section className="w-full h-full flex flex-col bg-section">
       <Header />
@@ -14,11 +23,10 @@ export default function Results() {
           <p className="text-[32px]">Origen → Destino</p>
         </div>
       </div>
-
-      <div className="flex-1/3">
+      <div className="flex-1/3 relative">
         <div className="grid grid-cols-3 h-full">
           <div className="py-15 px-5 flex justify-center items-end">
-            <div className="flex w-full max-w-md bg-[#dcfce7] h-[176px] rounded-[15px]">
+            <div className="cards card3 flex w-full max-w-md bg-[#dcfce7] h-[176px] rounded-[15px]">
               <div className="flex-1 flex h-full items-center justify-center">
                 <img src={Medal2} alt="medal-2" />
               </div>
@@ -29,7 +37,7 @@ export default function Results() {
             </div>
           </div>
           <div className="py-15 px-5 flex justify-center items-end">
-            <div className="flex w-full  bg-[#16A34A] h-[355px] rounded-[15px]">
+            <div className="cards card1 flex w-full  bg-[#16A34A] h-[355px] rounded-[15px]">
               <div className="flex-1 flex h-full items-center justify-center">
                 <img src={Medal1} alt="medal-2" />
               </div>
@@ -40,7 +48,7 @@ export default function Results() {
             </div>
           </div>
           <div className="py-15 px-5 flex justify-center items-end">
-            <div className="flex w-full max-w-md bg-[#dcfce7] h-[176px] rounded-[15px]">
+            <div className="cards card2 flex w-full max-w-md bg-[#dcfce7] h-[176px] rounded-[15px]">
               <div className="flex-1 flex h-full items-center justify-center">
                 <img src={Medal3} alt="medal-2" />
               </div>
