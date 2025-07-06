@@ -50,5 +50,11 @@
   .cards {
     opacity: 0;
     visibility: hidden;
+    cursor: pointer;
   }
+
+  .modal {
+    display: none;
+  }
+
 }

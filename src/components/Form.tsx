@@ -1,4 +1,16 @@
+import { useEffect, useState } from "react";
+import Selects from "./Select";
+
+type CiudadOption = {
+  value: number;
+  label: string;
+};
+
 export default function Form() {
+
+  const [selectedDesde, setSelectedDesde] = useState<CiudadOption | null>(null);
+  const [selectedHasta, setSelectedHasta] = useState<CiudadOption | null>(null);
+
   return (
     <div className="flex items-center justify-center">
       <form className="w-[550px] bg-white p-10 flex flex-col gap-10 rounded-xl">
@@ -12,14 +24,18 @@ export default function Form() {
           </p>
         </div>
         <div className="flex flex-col gap-5">
-          <label>
+          {/* <label>
             VIAJA DESDE:
-            <input type="text" placeholder="Ingrese una ciudad" />
-          </label>
-          <label>
-            HASTA:
-            <input type="text" placeholder="Ingrese su destino" />
-          </label>
+            <select>
+
+            </select>
+          </label> */}
+          <Selects
+            selectedDesde={selectedDesde}
+            setSelectedDesde={setSelectedDesde}
+            selectedHasta={selectedHasta}
+            setSelectedHasta={setSelectedHasta}
+          />
           <label>
             Seleccionar Prioridad:
             <select>

@@ -4,8 +4,12 @@ import Medal2 from "../assets/imgs/medal2.png";
 import Medal3 from "../assets/imgs/medal3.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { Flip } from "gsap/Flip";
+
+gsap.registerPlugin(Flip);
 
 export default function Results() {
+
   useGSAP(() => {
     const tl = gsap.timeline({
       defaults: { delay: 0.1, duration: 1, autoAlpha: 1 },
@@ -24,8 +28,8 @@ export default function Results() {
         </div>
       </div>
       <div className="flex-1/3 relative">
-        <div className="grid grid-cols-3 h-full">
-          <div className="py-15 px-5 flex justify-center items-end">
+        <div className="grid grid-cols-1 h-full">
+          {/* <div className="py-15 px-5 flex justify-center items-end">
             <div className="cards card3 flex w-full max-w-md bg-[#dcfce7] h-[176px] rounded-[15px]">
               <div className="flex-1 flex h-full items-center justify-center">
                 <img src={Medal2} alt="medal-2" />
@@ -35,7 +39,7 @@ export default function Results() {
                 <p className="text-[20px]">Segunda opcion</p>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="py-15 px-5 flex justify-center items-end">
             <div className="cards card1 flex w-full  bg-[#16A34A] h-[355px] rounded-[15px]">
               <div className="flex-1 flex h-full items-center justify-center">
@@ -47,7 +51,7 @@ export default function Results() {
               </div>
             </div>
           </div>
-          <div className="py-15 px-5 flex justify-center items-end">
+          {/* <div className="py-15 px-5 flex justify-center items-end">
             <div className="cards card2 flex w-full max-w-md bg-[#dcfce7] h-[176px] rounded-[15px]">
               <div className="flex-1 flex h-full items-center justify-center">
                 <img src={Medal3} alt="medal-2" />
@@ -57,7 +61,12 @@ export default function Results() {
                 <p className="text-[20px]">Tercera opcion</p>
               </div>
             </div>
-          </div>
+          </div> */}
+        </div>
+      </div>
+
+      <div className="modal fixed justify-center items-center h-full w-full bg-transparent">
+        <div className="w-[95vw] h-[95vh] contx">
         </div>
       </div>
     </section>
