@@ -1,70 +1,51 @@
-import { PiAirplaneTiltFill } from "react-icons/pi";
 import Header from "../../components/Header";
-import { FaBuilding } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
+import CardStep from "../../components/CardStep";
 
 const Details = () => {
-  return <section className="bg-[#f9fafb] h-full">
-    <Header color={"black"} />
-    <div className="mt-5 max-w-[90%] m-auto flex flex-col gap-[3rem]">
-      <div>
-        <h1 className="font-bold text-[32px]">Opción 2</h1>
-        <p className="text-[#656565]">Lima → Cusco</p>
-      </div>
+  const location = useLocation();
+  const { desde, hasta, criteria, result } = location.state || {};
 
-      <div className="flex flex-col gap-[3rem]">
-        <div className="w-full p-[2rem] flex justify-between items-center rounded-3xl bg-white drop-shadow-md">
-          <div>
-            <h3 className="font-bold text-[20px]">Resumen del Viaje</h3>
-            <p className="text-[#656565]">Precio total</p>
-          </div>
-
-          <div>
-            <p className="text-[#16A34A] text-[32px] font-semibold">S/ 192.00</p>
-          </div>
+  const formattingResult = (value: string) => {
+    if (criteria === "tiempo") {
+      return `${value} minutos`;
+    } else if (criteria === "precio") {
+      return `S/. ${value}`;
+    } else if (criteria === "distancia") {
+      return `${value} km`;
+    }
+  };
+  return (
+    <section className="bg-[#f9fafb] pb-10 min-h-full">
+      <Header color={"black"} />
+      <div className="mt-5 max-w-[90%] m-auto flex flex-col gap-[3rem]">
+        <div>
+          <h1 className="font-bold text-[32px]">Mejor resultado</h1>
+          <p className="text-[#656565]">
+            {desde.label} → {hasta.label}
+          </p>
         </div>
 
-        <div className="w-full p-[1.5rem] flex justify-between items-center rounded-3xl border-1 border-[#16A34A]">
-          <div className="flex gap-5">
-            <div className="flex justify-center items-center">
-              <PiAirplaneTiltFill color="16A34A" size={50} />
+        <div className="flex flex-col gap-[3rem]">
+          <div className="w-full p-[2rem] flex justify-between items-center rounded-3xl bg-white drop-shadow-md">
+            <div>
+              <h3 className="font-bold text-[20px]">Resumen del Viaje</h3>
+              <p className="text-[#656565]">Total</p>
             </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="text-[20px]">Lima → Huánuco</h3>
-              <p className="text-[#656565]">Vuelo</p>
-              <div className="flex gap-1 items-center">
-                <FaBuilding color="#656565"/>
-                <p className="#656565">Empresa: Nombre de la empresa</p>
-              </div>
-            </div>
-          </div>
 
-          <div>
-            <p className="text-[#16A34A] text-[32px] font-semibold">S/ 192.00</p>
-          </div>
-        </div>
-
-        <div className="w-full p-[1.5rem] flex justify-between items-center rounded-3xl border-1 border-[#16A34A]">
-          <div className="flex gap-5">
-            <div className="flex justify-center items-center">
-              <PiAirplaneTiltFill color="16A34A" size={50} />
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="text-[20px]">Lima → Huánuco</h3>
-              <p className="text-[#656565]">Vuelo</p>
-              <div className="flex gap-1 items-center">
-                <FaBuilding color="#656565"/>
-                <p className="#656565">Empresa: Nombre de la empresa</p>
-              </div>
+            <div>
+              <p className="text-[#16A34A] text-[32px] font-semibold">
+                {formattingResult(result.total)}
+              </p>
             </div>
           </div>
-
-          <div>
-            <p className="text-[#16A34A] text-[32px] font-semibold">S/ 192.00</p>
-          </div>
+          {result.steps.map((step) => (
+            <CardStep key={step.distancia_km} step={step} criteria={criteria} />
+          ))}
         </div>
       </div>
-    </div>
-  </section>;
+    </section>
+  );
 };
 
 export default Details;

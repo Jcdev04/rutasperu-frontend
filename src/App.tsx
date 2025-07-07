@@ -2,7 +2,7 @@ import Home from "./pages/home";
 import Top from "./pages/top";
 import Details from "./pages/details";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Results from "./components/Results";
+import Results from "./pages/top/Results";
 function App() {
   return (
     <Routes>

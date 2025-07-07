@@ -10,7 +10,7 @@ const Top = () => {
         backgroundPosition: "center",
       }}
     >
-      <Header/>
+      <Header color="white" />
       <h1 className="text-white text-4xl font-bold">Top Page</h1>
     </div>
   );
