@@ -39,7 +39,7 @@ const Details = () => {
               </p>
             </div>
           </div>
-          {result.steps.map((step) => (
+          {result.steps.map((step: any) => (
             <CardStep key={step.distancia_km} step={step} criteria={criteria} />
           ))}
         </div>
